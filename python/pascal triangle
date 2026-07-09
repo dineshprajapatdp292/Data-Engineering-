@@ -1,1 +1,107 @@
+1st attempt
 
+k=0
+for i in range(5,0,-1):
+
+for j in range(1,2*5):
+    
+    if j==i:
+       mylist=[]
+       mylist.extend(str(11**k))
+       for l in mylist:
+          print(l,end="  ")
+    else:
+    #    if j>i:
+    #       break
+    #    else:
+        print(" ",end=" ")
+k+=1
+print()
+
+2nd attempt improve
+
+k=0
+for i in range(5,0,-1):
+
+for j in range(1,2*5):
+    
+    if j==i:
+       value=(str(11**k))
+       for l in value:
+          print(l,end="  ")
+    else:
+    #    if j>i:
+    #       break
+    #    else:
+        print(" ",end=" ")
+k+=1
+print()
+
+chat gpt
+k = 0
+for i in range(5, 0, -1):
+
+value = str(11 ** k)   # calculate once
+
+for j in range(1, 2*5):
+    if j == i:
+        for digit in value:
+            print(digit, end=" ")
+    else:
+        print(" ", end=" ")
+
+k += 1
+print()
+==>
+rows = 5
+for i in range(rows):
+print(" "*(rows-i), end="")
+num = 1
+for j in range(i+1):
+print(num, end=" ")
+num = num * (i-j) // (j+1)
+print()
+
+==>
+for k in range(5):
+print(" " * (5 - k), end="")
+
+value = str(11**k)
+for digit in value:
+    print(digit, end=" ")
+
+print()
+=>>
+rows = 5
+
+for i in range(rows):
+print(" " * (rows - i), end="")
+
+num = 1
+for j in range(i + 1):
+    print(num, end=" ")
+    num = num * (i - j) // (j + 1)
+
+print()
+===>
+n = 6
+originallist = []
+
+for i in range(n):
+rowlist = []
+
+# spacing
+for j in range(n - i - 1):
+    print(" ", end="")
+
+for k in range(i + 1):
+    if k == 0 or k == i:
+        val = 1
+    else:
+        val = originallist[i-1][k-1] + originallist[i-1][k]
+    
+    print(val, end=" ")
+    rowlist.append(val)
+
+originallist.append(rowlist)
+print()
