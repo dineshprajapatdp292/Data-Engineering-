@@ -1,1 +1,16 @@
+if name == 'main':
+n = int(input())
+arr = list(map(int, input().split()))
+arr.sort()
+maxi=arr[0]
+smaxi=arr[0]
 
+for i in arr:
+    if maxi < i:
+        smaxi=maxi
+        maxi=i
+    elif smaxi<i and maxi !=i:
+        smaxi=i
+    elif smaxi > i and maxi > i:
+        smaxi=i
+print(smaxi)
