@@ -1,1 +1,81 @@
+1st attemp
+class Solution: def fib(self, n: int) -> int:
 
+0 1 1 2 3 5
+if n==0:
+return 0
+a=0
+b=1
+mylist=[0,1]
+for i in range(n-2):#2=>0,1
+c=a#0
+a=b#1
+b=a+c#1
+mylist.append(b)
+return (mylist[-1]+mylist[-2])
+
+===>
+class Solution:
+def fib(self, n: int) -> int:
+if n == 0:
+return 0
+if n == 1:
+return 1
+
+    a = 0
+    b = 1
+    mylist = [0, 1]
+    
+    for i in range(n - 1):
+        c = a
+        a = b
+        b = a + c
+        mylist.append(b)
+    
+    return mylist[n]
+===> class Solution:
+def fib(self, n: int) -> int:
+if n == 0:
+return 0
+if n == 1:
+return 1
+
+    a = 0
+    b = 1
+    mylist = [0, 1]
+    
+    for i in range(n - 1):
+        c = a
+        a = b
+        b = a + c
+        mylist.append(b)
+    
+    return mylist[n]
+===>
+class Solution:
+def fib(self, n: int) -> int:
+if n <= 1:
+return n
+
+    a = 0
+    b = 1
+    
+    for _ in range(2, n + 1):
+        a, b = b, a + b
+    
+    return b
+
+===>
+
+class Solution:
+def fib(self, n: int) -> int:
+if n <= 1:
+return n
+
+    a = 0
+    b = 1
+
+    for _ in range(n - 1):
+        a, b = b, a + b
+
+    return a
