@@ -1,1 +1,11 @@
+#Print Name N times using Recursion
 
+def recursion(name,n):
+
+if n<0:
+    
+    return
+
+recursion(name,n-1)
+print(name,n)
+recursion(n=5,name='sofia')
