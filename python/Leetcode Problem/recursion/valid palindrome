@@ -1,1 +1,51 @@
+class Solution:
+def isPalindrome(self, s: str) -> bool:
 
+    cleaned = ''
+    
+    for ch in s:
+        if ch.isalnum():
+            cleaned += ch.lower()
+    
+    def f(i):
+        if i >= len(cleaned)//2:
+            return True
+        if cleaned[i] != cleaned[len(cleaned)-1-i]:
+            return False
+        return f(i+1)
+    
+    return f(0)
+==>
+class Solution:
+def isPalindrome(self, s: str) -> bool:
+
+    s1=''
+
+    for i in s:
+      if i.isalnum():
+        s1+=i.lower()
+
+    s=s1[:]  
+    for i in range(len(s)//2):
+     if s[i]!=s[len(s)-1-i]:
+        return False
+    return True
+==>
+class Solution:
+def isPalindrome(self, s: str) -> bool:
+
+    s1=''
+
+    for i in s:
+      if i in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ':
+            s1+=(i.lower())
+      elif i in 'abcdefghijklmnopqrstuvwxyz':
+           s1+=(i.lower())
+      elif i in '1234567890':
+       s1+=(i)
+
+    s=s1[:]  
+    for i in range(len(s)//2):
+     if s[i]!=s[len(s)-1-i]:
+        return False
+    return True
