@@ -1,1 +1,9 @@
+#Print 1 to N using Recursion
 
+def printf(n):
+
+if n==0:
+    return
+
+printf(n-1)
+print(n)
