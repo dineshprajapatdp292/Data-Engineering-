@@ -1,1 +1,20 @@
+#Factorial of a Number : Iterative and Recursive
 
+def factorial(n):
+
+if n==0:
+    return 1
+return n*factorial(n-1)
+print(factorial(5))
+
+===>
+
+#Factorial of a Number : Iterative and Recursive
+
+def factorial(n,fac):
+
+if n==0:
+    print(fac)
+    return 
+factorial(n-1,n*fac)
+factorial(5,1)
