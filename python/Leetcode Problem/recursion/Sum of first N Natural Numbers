@@ -1,1 +1,25 @@
+#Sum of first N Natural Numbers
+
+with parameter
+def sums(n,sum):
+
+if n==0:
+print(sum)
+return
+sums(n-1,sum+n)
+sums(5,0)
+
+
+#Sum of first N Natural Numbers
+
+with return function
+def sums(n):
+
+if n==0:
+
+   return 0
+return n+sums(n-1)
+
+print(sums(5) )
+
 
