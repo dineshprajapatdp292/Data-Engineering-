@@ -1,1 +1,50 @@
+s = "([)]"
 
+x=[ ]
+is_valid=True
+if len(s)%2!=0:
+is_valid=False
+else:
+for i in s:
+if i=="(" or i=="{" or i=="[":
+x.append(i)
+else:
+if len(x)==0:
+is_valid=False
+break
+elif ( i==")" and x[-1]=="(" ) or ( i=="}" and x[-1]=="{") or ( i=="]" and x[-1]=='['):
+x.pop(-1)
+else:
+is_valid=False
+break
+
+if len(x)!=0:
+is_valid=False
+print(is_valid)
+
+
+
+
+leetcode accept ->
+class Solution:
+def isValid(self, s: str) -> bool:
+
+    x = []
+
+    if len(s) % 2 != 0:
+        return False
+
+    for i in s:
+        if i == "(" or i == "{" or i == "[":
+            x.append(i)
+        else:
+            if len(x) == 0:
+                return False
+            elif (i == ")" and x[-1] == "(") or \
+                 (i == "}" and x[-1] == "{") or \
+                 (i == "]" and x[-1] == "["):
+                x.pop()
+            else:
+                return False
+
+    return len(x) == 0
