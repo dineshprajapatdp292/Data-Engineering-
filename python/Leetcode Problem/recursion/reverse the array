@@ -1,1 +1,9 @@
+#Reverse a given Array
+def reverse(n,i):
 
+if i>len(n)//2-1:
+    print(n)
+    return 
+n[i],n[len(n)-1-i]=n[len(n)-1-i],n[i]
+reverse(n,i+1)
+reverse([1,2,3,4],0)
