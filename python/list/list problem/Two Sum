@@ -1,1 +1,53 @@
+nums = [2, 7, 11, 7, 15]
+target = 9
+
+x = 0
+y = 1
+
+while x < len(nums) - 1:
+if nums[x] + nums[y] == target:
+print(x, y)
+
+y += 1
+if y == len(nums):
+    x += 1
+    y = x + 1
+
+
+===>
+
+nums = [2, 7, 11, 7, 15]
+target = 9
+
+for i in range(len(nums)):
+for j in range(i + 1, len(nums)):
+if nums[i] + nums[j] == target:
+print(i, j)
+
+
+===>
+
+
+nums = [2, 7, 11, 7, 15]
+target = 9
+
+seen = { }
+
+for i, num in enumerate(nums):
+rem = target - num
+if rem in seen:
+print(seen[rem], i)
+
+seen[num] = i
+
+==>
+
+nums = [2,7,11,15]
+target = 9
+
+for i in range(len(nums)):
+for j in range(i+1, len(nums)):
+if nums[i] + nums[j] == target:
+print(i, j)
+
 
